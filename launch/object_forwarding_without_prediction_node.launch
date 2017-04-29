@@ -1,0 +1,9 @@
+<launch>
+
+  <arg name="config" default="$(find sim_sample_prediction_ros_tool)/launch/params/object_forwarding_without_prediction_parameters.yaml" />
+
+  <node pkg="sim_sample_prediction_ros_tool" type="object_forwarding_without_prediction" name="object_forwarding_without_prediction" output="screen">
+    <rosparam command="load" file="$(arg config)"/>
+  </node>
+
+</launch>
