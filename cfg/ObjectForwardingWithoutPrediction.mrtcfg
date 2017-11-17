@@ -46,7 +46,7 @@ gen.add("verbosity", paramtype='std::string', description="Set logger level for 
 
 # Your Params here
 gen.add("vehicle_id", paramtype='int', description="Vehicle ID")
-gen.add("percepted_objects_in_topic", paramtype='std::string', description="Topicname of objects from perception", default="default_percepted_objects_in_topic")
+gen.add("perceived_objects_in_topic", paramtype='std::string', description="Topicname of objects from perception", default="default_perceived_objects_in_topic")
 gen.add("predicted_objects_out_topic", paramtype='std::string', description="Topicname of predictions for planning", default="default_predicted_objects_out_topic")
 
 

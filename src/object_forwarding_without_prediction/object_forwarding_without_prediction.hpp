@@ -30,7 +30,7 @@ private:
     tf2_ros::TransformListener tfListener_;
     tf2_ros::TransformBroadcaster tfBroadcaster_;
 
-    void subCallback(const automated_driving_msgs::ObjectStateArray::ConstPtr& percepted_objects);
+    void subCallback(const automated_driving_msgs::ObjectStateArray::ConstPtr& perceived_objects);
     void reconfigureRequest(ObjectForwardingWithoutPredictionConfig&, uint32_t);
 };
 

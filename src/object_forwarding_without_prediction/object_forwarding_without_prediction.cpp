@@ -26,7 +26,7 @@ ObjectForwardingWithoutPrediction::ObjectForwardingWithoutPrediction(
 
     // Instantiate subscriber last, to assure all objects are initialised when first message is
     // received.
-    dummySub_ = node_handle.subscribe(params_.percepted_objects_in_topic,
+    dummySub_ = node_handle.subscribe(params_.perceived_objects_in_topic,
                                       params_.msg_queue_size,
                                       &ObjectForwardingWithoutPrediction::subCallback,
                                       this,
@@ -39,9 +39,9 @@ ObjectForwardingWithoutPrediction::ObjectForwardingWithoutPrediction(
  * The Ptr type guarantees zero copy transportation within nodelets.
  */
 void ObjectForwardingWithoutPrediction::subCallback(
-    const automated_driving_msgs::ObjectStateArray::ConstPtr& percepted_objects) {
+    const automated_driving_msgs::ObjectStateArray::ConstPtr& perceived_objects) {
 
-    automated_driving_msgs::ObjectStateArray predicted_objects = *percepted_objects;
+    automated_driving_msgs::ObjectStateArray predicted_objects = *perceived_objects;
     dummyPub_.publish(predicted_objects);
 }
 

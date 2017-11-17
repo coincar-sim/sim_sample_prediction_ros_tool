@@ -21,7 +21,7 @@
 	<param name="vehicle_id" value="$(arg vehicle_id)" />
 
    	<!-- Remap Topics -->
-        <remap from="default_percepted_objects_in_topic" to="/$(arg vehicle_ns)/$(arg perc_pred_obj_topic)"/>
+        <remap from="default_perceived_objects_in_topic" to="/$(arg vehicle_ns)/$(arg perc_pred_obj_topic)"/>
         <remap from="default_predicted_objects_out_topic" to="/$(arg vehicle_ns)/$(arg pred_plan_obj_topic)"/>
 
   </node>
