@@ -2,8 +2,8 @@
 
 namespace sim_sample_prediction_ros_tool {
 
-ObjectForwardingWithoutPrediction::ObjectForwardingWithoutPrediction(
-    ros::NodeHandle node_handle, ros::NodeHandle private_node_handle)
+ObjectForwardingWithoutPrediction::ObjectForwardingWithoutPrediction(ros::NodeHandle node_handle,
+                                                                     ros::NodeHandle private_node_handle)
         : reconfigSrv_{private_node_handle}, params_{private_node_handle}, tfListener_{tfBuffer_} {
 
     /**
@@ -14,15 +14,14 @@ ObjectForwardingWithoutPrediction::ObjectForwardingWithoutPrediction(
     /**
      * Set up dynamic reconfiguration
      */
-    reconfigSrv_.setCallback(
-        boost::bind(&ObjectForwardingWithoutPrediction::reconfigureRequest, this, _1, _2));
+    reconfigSrv_.setCallback(boost::bind(&ObjectForwardingWithoutPrediction::reconfigureRequest, this, _1, _2));
 
     /**
      * Publishers & subscriber
      */
 
-    dummyPub_ = node_handle.advertise<automated_driving_msgs::ObjectStateArray>(
-        params_.predicted_objects_out_topic, params_.msg_queue_size);
+    dummyPub_ = node_handle.advertise<automated_driving_msgs::ObjectStateArray>(params_.predicted_objects_out_topic,
+                                                                                params_.msg_queue_size);
 
     // Instantiate subscriber last, to assure all objects are initialised when first message is
     // received.
@@ -48,8 +47,8 @@ void ObjectForwardingWithoutPrediction::subCallback(
 /**
   * This callback is called whenever a change was made in the dynamic_reconfigure window
 */
-void ObjectForwardingWithoutPrediction::reconfigureRequest(
-    ObjectForwardingWithoutPredictionConfig& config, uint32_t level) {
+void ObjectForwardingWithoutPrediction::reconfigureRequest(ObjectForwardingWithoutPredictionConfig& config,
+                                                           uint32_t level) {
     params_.fromConfig(config);
 }
 

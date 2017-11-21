@@ -16,5 +16,7 @@ void ObjectForwardingWithoutPredictionNodelet::onInit() {
 
 } // namespace sim_sample_prediction_ros_tool
 
-PLUGINLIB_DECLARE_CLASS(sim_sample_prediction_ros_tool, ObjectForwardingWithoutPredictionNodelet,
-                        sim_sample_prediction_ros_tool::ObjectForwardingWithoutPredictionNodelet, nodelet::Nodelet);
+PLUGINLIB_DECLARE_CLASS(sim_sample_prediction_ros_tool,
+                        ObjectForwardingWithoutPredictionNodelet,
+                        sim_sample_prediction_ros_tool::ObjectForwardingWithoutPredictionNodelet,
+                        nodelet::Nodelet);
