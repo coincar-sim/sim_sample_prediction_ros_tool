@@ -5,7 +5,7 @@ Currently forwards the perceived objects without predicting their motion.
 
 ## Installation
 * this package is part of the simulation framework
-* see simulation_management_ros_tool for installation and more details
+* see [coincarsim_getting_started](https://github.com/coincar-sim/coincarsim_getting_started) for installation and more details
 
 ## Usage
 * started within the a vehicle launchfile of the simulation_initialization_ros_tool
@@ -24,12 +24,14 @@ Currently forwards the perceived objects without predicting their motion.
   * **lanelet_map_filename**: Filename (including path) of the lanelet map
 
 ## Contribution
-
 * fork this repo
 * use your own algorithms for predicting the motion of perceived objects
 * ensure that
   * `/$(arg vehicle_ns)/$(arg pred_plan_obj_topic)` is published
-  * all internal ROS communication stays within the perception namespace
+  * all internal ROS communication stays within the prediction namespace
+
+## Contributors
+Pascal Böhmler, Nick Engelhardt, Tobias Kronauer, Maximilian Naumann
 
 ## License
-Contact the maintainer.
+This package is distributed under the 3-Clause BSD License, see [LICENSE](LICENSE).
