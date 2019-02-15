@@ -39,7 +39,7 @@
 #include <automated_driving_msgs/ObjectState.h>
 #include <automated_driving_msgs/ObjectStateArray.h>
 
-#include "sim_sample_prediction_ros_tool/ObjectForwardingWithoutPredictionParameters.h"
+#include "sim_sample_prediction_ros_tool/ObjectForwardingWithoutPredictionInterface.h"
 
 namespace sim_sample_prediction_ros_tool {
 
@@ -54,7 +54,7 @@ private:
     dynamic_reconfigure::Server<ObjectForwardingWithoutPredictionConfig>
         reconfigSrv_; // Dynamic reconfiguration service
 
-    ObjectForwardingWithoutPredictionParameters params_;
+    ObjectForwardingWithoutPredictionInterface params_;
 
     tf2_ros::Buffer tfBuffer_;
     tf2_ros::TransformListener tfListener_;

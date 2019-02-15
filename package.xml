@@ -18,7 +18,7 @@
 
   <depend>automated_driving_msgs</depend>
   <depend>dynamic_reconfigure</depend>
-  <depend>rosparam_handler</depend>
+  <depend>rosinterface_handler</depend>
   <depend>tf2_ros</depend>
 
   <export>
