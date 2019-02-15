@@ -1,0 +1,17 @@
+<launch>
+
+   <!-- Arguments that are passed from the top launchfile -->
+   <arg name="vehicle_id" />
+   <arg name="vehicle_ns" />
+
+   <arg name="perc_pred_obj_topic" />
+   <arg name="pred_plan_obj_topic" />
+
+   <!-- Launch Nodes -->
+   <node pkg="sim_sample_prediction_ros_tool" type="lane_prediction" name="lane_prediction" output="screen">
+        <!-- Set Topics -->
+        <param name="perceived_objects_sub_topic" value="/$(arg vehicle_ns)/$(arg perc_pred_obj_topic)" />
+        <param name="predicted_objects_pub_topic" value="/$(arg vehicle_ns)/$(arg pred_plan_obj_topic)" />
+   </node>
+
+</launch>

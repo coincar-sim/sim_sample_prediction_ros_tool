@@ -10,3 +10,9 @@
   <description></description>
 </class>
 </library>
+<library path="lib/liblane_prediction_nodelet">
+<class name="sim_sample_prediction_ros_tool/LanePredictionNodelet"
+       type="sim_sample_prediction_ros_tool::LanePredictionNodelet" base_class_type="nodelet::Nodelet">
+  <description></description>
+</class>
+</library>

@@ -28,23 +28,31 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "object_forwarding_without_prediction.hpp"
-#include <nodelet/nodelet.h>
-#include <pluginlib/class_list_macros.h>
+#pragma once
 
-namespace sim_sample_prediction_ros_tool {
+#include <boost/format.hpp>
+#include <ros/ros.h>
 
-class ObjectForwardingWithoutPredictionNodelet : public nodelet::Nodelet {
+#include <automated_driving_msgs/MotionState.h>
+#include <automated_driving_msgs/ObjectState.h>
 
-    virtual void onInit();
-    boost::shared_ptr<ObjectForwardingWithoutPrediction> m_;
-};
+#include <util_automated_driving_msgs/util_automated_driving_msgs.hpp>
+#include <util_eigen_geometry/util_eigen_geometry.hpp>
 
-void ObjectForwardingWithoutPredictionNodelet::onInit() {
-    m_.reset(new ObjectForwardingWithoutPrediction(getNodeHandle(), getPrivateNodeHandle()));
-}
+#include <lanelet2_io/Io.h>
+#include <lanelet2_routing/RoutingGraph.h>
+#include <lanelet2_core/primitives/Lanelet.h>
 
-} // namespace sim_sample_prediction_ros_tool
 
-PLUGINLIB_EXPORT_CLASS(sim_sample_prediction_ros_tool::ObjectForwardingWithoutPredictionNodelet, 
-                       nodelet::Nodelet);
+namespace util_prediction {
+
+bool isOnAnyLanelet(const lanelet::LaneletMapConstPtr& mapPtr, const automated_driving_msgs::ObjectState& objectState);
+
+automated_driving_msgs::ObjectState predictAlongLane(const lanelet::LaneletMapConstPtr& theMapPtr,
+                                                     const lanelet::routing::RoutingGraphConstPtr& routingGraphPtr,
+                                                     const automated_driving_msgs::ObjectState& objectState,
+                                                     const double& predictionHorizon);
+
+automated_driving_msgs::ObjectState predictStaticObject(const automated_driving_msgs::ObjectState& objectState,
+                                                        const double& predictionHorizon);
+} // namespace util_prediction
