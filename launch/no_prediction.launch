@@ -1,0 +1,21 @@
+<launch>
+
+   <!-- Arguments that are passed from the top launchfile -->
+   <arg name="vehicle_id" />
+   <arg name="vehicle_ns" />
+
+   <arg name="perc_pred_obj_topic" />
+   <arg name="pred_plan_obj_topic" />
+
+
+   <!-- Launch Nodes -->
+   <node pkg="sim_sample_prediction_ros_tool" type="object_forwarding_without_prediction" name="object_forwarding_without_prediction" output="screen">
+      <!-- Set Parameters -->
+	    <param name="vehicle_id" value="$(arg vehicle_id)" />
+
+   	  <!-- Remap Topics -->
+      <remap from="default_perceived_objects_in_topic" to="/$(arg vehicle_ns)/$(arg perc_pred_obj_topic)"/>
+      <remap from="default_predicted_objects_out_topic" to="/$(arg vehicle_ns)/$(arg pred_plan_obj_topic)"/>
+    </node>
+
+</launch>

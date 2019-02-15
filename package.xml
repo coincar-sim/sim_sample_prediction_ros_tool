@@ -16,11 +16,19 @@
   <depend>roslib</depend>
   <depend>nodelet</depend>
 
-  <depend>automated_driving_msgs</depend>
-  <depend>dynamic_reconfigure</depend>
-  <depend>rosinterface_handler</depend>
-  <depend>tf2_ros</depend>
 
+  <depend>rosinterface_handler</depend>  
+  <depend>dynamic_reconfigure</depend>
+  <depend>tf2_ros</depend>
+  <depend>automated_driving_msgs</depend>
+  <depend>util_eigen_geometry</depend>
+  <depend>util_automated_driving_msgs</depend>
+  <depend>lanelet2_io</depend>
+  <depend>lanelet2_core</depend>
+  <depend>lanelet2_routing</depend>
+  <depend>lanelet2_interface_ros</depend>
+
+  <depend>message_filters</depend>
   <export>
     <nodelet plugin="${prefix}/nodelet_plugins.xml" /><!-- Other tools can request additional information be placed here -->
   </export>

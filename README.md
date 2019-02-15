@@ -1,7 +1,7 @@
 # sim_sample_prediction_ros_tool
 Sample prediction module for a vehicle in the simulation framework.
 
-Currently forwards the perceived objects without predicting their motion.
+Either forwards the perceived objects without predicting their motion (`no_prediction.launch`) or predicts vehicles with constant velocity along the centerline of possible lanelet sequences and other objects with constant position (`lane_prediction.launch`).
 
 ## Installation
 * this package is part of the simulation framework
@@ -15,13 +15,11 @@ Currently forwards the perceived objects without predicting their motion.
   * **vehicle_id**: Id of the vehicle, needs to be unique within the framework
   * **vehicle_ns**: Namespace of the vehicle, needs to be unique within the framework
 
-  * **objects_ground_truth_topic_with_ns**: Topic under which the ground truth states of the objects are received
   * **perc_pred_obj_topic**: Topic for the perceived objects
-  * **perc_egomotion_topic**: Topic for the perceived ego motion state
   * **pred_plan_obj_topic**: Topic for the predicted objects
-  * **internal_communication_subns**: Subnamespace for vehicle-internal communication
 
-  * **lanelet_map_filename**: Filename (including path) of the lanelet map
+* the lanelet2_map (for `lane_prediction.launch`) is retrieved via the package `lanelet2_interface_ros`
+
 
 ## Contribution
 * fork this repo
@@ -31,7 +29,7 @@ Currently forwards the perceived objects without predicting their motion.
   * all internal ROS communication stays within the prediction namespace
 
 ## Contributors
-Pascal Böhmler, Nick Engelhardt, Tobias Kronauer, Maximilian Naumann
+Pascal Böhmler, Nick Engelhardt, Tobias Kronauer, Alexander Naumann, Maximilian Naumann
 
 ## License
 This package is distributed under the 3-Clause BSD License, see [LICENSE](LICENSE).
