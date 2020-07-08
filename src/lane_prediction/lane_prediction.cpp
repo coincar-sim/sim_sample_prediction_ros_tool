@@ -41,11 +41,9 @@ void LanePrediction::callbackSubscriber(const ObjStArrMsg::ConstPtr& msg) {
     predictedObjects.header = msg->header;
 
     if (predictedObjects.header.frame_id != mapFrame_) {
-        ROS_ERROR_STREAM_THROTTLE(
-            3,
-            "Cannot predict obstacles as the are not in map frame \"" << mapFrame_ << "\" but in frame \""
-                                                                      << predictedObjects.header.frame_id
-                                                                      << "\"");
+        ROS_ERROR_STREAM_THROTTLE(3,
+                                  "Cannot predict obstacles as the are not in map frame \""
+                                      << mapFrame_ << "\" but in frame \"" << predictedObjects.header.frame_id << "\"");
         return;
     }
 
@@ -74,8 +72,8 @@ void LanePrediction::callbackSubscriber(const ObjStArrMsg::ConstPtr& msg) {
 }
 
 /**
-  * This callback is called at startup or whenever a change was made in the dynamic_reconfigure window
-*/
+ * This callback is called at startup or whenever a change was made in the dynamic_reconfigure window
+ */
 void LanePrediction::reconfigureRequest(const Interface::Config& config, uint32_t level) {
     interface_.fromConfig(config);
 }
