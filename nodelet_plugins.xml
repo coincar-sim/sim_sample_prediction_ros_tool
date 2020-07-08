@@ -1,16 +1,10 @@
-<library path="lib/libsimple_forwarding_nodelet">
-<class name="sim_sample_prediction_ros_tool/SimpleForwardingNodelet"
-       type="sim_sample_prediction_ros_tool::SimpleForwardingNodelet" base_class_type="nodelet::Nodelet">
-  <description></description>
-</class>
-</library>
-<library path="lib/libobject_forwarding_without_prediction_nodelet">
+<library path="lib/libsim_sample_prediction_ros_tool-object_forwarding_without_prediction_nodelet">
 <class name="sim_sample_prediction_ros_tool/ObjectForwardingWithoutPredictionNodelet"
        type="sim_sample_prediction_ros_tool::ObjectForwardingWithoutPredictionNodelet" base_class_type="nodelet::Nodelet">
   <description></description>
 </class>
 </library>
-<library path="lib/liblane_prediction_nodelet">
+<library path="lib/libsim_sample_prediction_ros_tool-lane_prediction_nodelet">
 <class name="sim_sample_prediction_ros_tool/LanePredictionNodelet"
        type="sim_sample_prediction_ros_tool::LanePredictionNodelet" base_class_type="nodelet::Nodelet">
   <description></description>
