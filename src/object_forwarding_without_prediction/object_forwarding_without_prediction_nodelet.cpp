@@ -28,9 +28,9 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "object_forwarding_without_prediction.hpp"
 #include <nodelet/nodelet.h>
 #include <pluginlib/class_list_macros.h>
+#include "object_forwarding_without_prediction.hpp"
 
 namespace sim_sample_prediction_ros_tool {
 
@@ -46,5 +46,4 @@ void ObjectForwardingWithoutPredictionNodelet::onInit() {
 
 } // namespace sim_sample_prediction_ros_tool
 
-PLUGINLIB_EXPORT_CLASS(sim_sample_prediction_ros_tool::ObjectForwardingWithoutPredictionNodelet, 
-                       nodelet::Nodelet);
+PLUGINLIB_EXPORT_CLASS(sim_sample_prediction_ros_tool::ObjectForwardingWithoutPredictionNodelet, nodelet::Nodelet);
