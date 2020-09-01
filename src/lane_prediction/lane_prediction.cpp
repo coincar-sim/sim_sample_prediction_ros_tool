@@ -31,7 +31,7 @@ LanePrediction::LanePrediction(ros::NodeHandle nhPublic, ros::NodeHandle nhPriva
     reconfigureServer_.setCallback(boost::bind(&LanePrediction::reconfigureRequest, this, _1, _2));
     interface_.perceived_objects_sub->registerCallback(&LanePrediction::callbackSubscriber, this);
 
-    rosinterface_handler::showNodeInfo();
+    interface_.showNodeInfo();
 }
 
 void LanePrediction::callbackSubscriber(const ObjStArrMsg::ConstPtr& msg) {
